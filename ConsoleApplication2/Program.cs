@@ -4,40 +4,75 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication2
+namespace SharpCalculator
 {
-    class Program
+    class Calculator
     {
-        static void Main(string[] args)
+        public static double InputNum()
         {
-            //Variable initialisation
 
-            string num1;
-            string num2;
-            double doubleNum1;
-            double doubleNum2;
-            string op;
-            double outputNum;
-            string output = null;
-            string[] acceptedOps = new string[] {"+","-","x","X","*","/","**","^"};
-            bool correct = false;
-
-            //Data input
-            
-            Console.WriteLine("Enter first number:");
-            while (true) 
+        Console.WriteLine("Enter number:");
+            while (true)
             {
                 try
                 {
-                    num1 = Console.ReadLine();
-                    doubleNum1 = Convert.ToDouble(num1);
-                    break;
+                    string num = Console.ReadLine();
+                    double doubleNum = Convert.ToDouble(num);
+                    return doubleNum;
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Please input a number:");
                 }
             }
+        }
+
+        //Operations
+
+        public static double Add(double firstNum)
+        {
+            double secondNum = InputNum();
+            return firstNum + secondNum;
+        }
+
+        public static double Minus(double firstNum)
+        {
+            double secondNum = InputNum();
+            return firstNum - secondNum;
+        }
+
+        public static double Multi(double firstNum)
+        {
+            double secondNum = InputNum();
+            return firstNum * secondNum;
+        }
+
+        public static double Divide(double firstNum)
+        {
+            double secondNum = InputNum();
+            return firstNum / secondNum;
+        }
+
+        public static double PowerOf(double firstNum)
+        {
+            double secondNum = InputNum();
+            return Math.Pow(firstNum,secondNum);
+        }
+
+        //main
+        static void Main(string[] args)
+        {
+            //Variable initialisation
+            string op;
+            double firstNum;
+            bool AvailableOp = false;
+            string[] acceptedOps = new string[] {"+","-","x","X","*","/","**","^"};
+
+
+            //Data input
+
+            firstNum = Calculator.InputNum();
+
             while (true)
             {
                 Console.WriteLine("Enter an operator:");
@@ -46,11 +81,11 @@ namespace ConsoleApplication2
                 {
                     if (op == checkOp)
                     {
-                        correct = true;
+                        AvailableOp = true;
                         break;
                     }
                 }
-                if (correct == true)
+                if (AvailableOp == true)
                 {
                     break;
                 }
@@ -59,52 +94,34 @@ namespace ConsoleApplication2
                     Console.WriteLine("Please input a valid operator (+ - * / ^)");
                 }
             }
-            Console.WriteLine("Enter second number:");
-            while (true)
-            {
-                try
-                {
-                    num2 = Console.ReadLine();
-                    doubleNum2 = Convert.ToDouble(num2);
-                    break;
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Please input a number:");
-                }
-            }
-            
 
+
+            double outputNum = 0.0;
             //Calculation
-
+            
             switch (op)
             {
                 case "+":
-                    outputNum = doubleNum1 + doubleNum2;
-                    output = num1 + "+" + num2 + "=" + outputNum.ToString();
+                    outputNum = Calculator.Add(firstNum);
                     break;
                 case "-":
-                    outputNum = doubleNum1 - doubleNum2;
-                    output = num1 + "-" + num2 + "=" + outputNum.ToString();
+                    outputNum = Calculator.Minus(firstNum);
                     break;
                 case "x":
                 case "X":
                 case "*":
-                    outputNum = doubleNum1 * doubleNum2;
-                    output = num1 + "*" + num2 + "=" + outputNum.ToString();
+                    outputNum = Calculator.Multi(firstNum);
                     break;
                 case "/":
-                    outputNum = doubleNum1 / doubleNum2;
-                    output = num1 + "/" + num2 + "=" + outputNum.ToString();
+                    outputNum = Calculator.Divide(firstNum);
                     break;
                 case "**":
                 case "^":
-                    outputNum = Math.Pow(doubleNum1,doubleNum2);
-                    output = num1 + "^" + num2 + "=" + outputNum.ToString();
+                    outputNum = Calculator.PowerOf(firstNum);
                     break;
             }
 
-            Console.WriteLine(output);
+            Console.WriteLine(outputNum);
             Console.Read();
         }
     }

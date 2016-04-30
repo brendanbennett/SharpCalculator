@@ -16,3 +16,9 @@ C:\Users\benne\Dropbox\ConsoleApplication2 - Copy\ConsoleApplication2\obj\Debug\
 C:\Users\benne\Dropbox\ConsoleApplication2 - Copy\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
 C:\Users\benne\Dropbox\ConsoleApplication2 - Copy\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
 C:\Users\benne\Dropbox\ConsoleApplication2 - Copy\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+C:\Users\benne\Documents\GitHub\SharpCalculator\ConsoleApplication2\obj\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
